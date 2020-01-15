@@ -1,11 +1,3 @@
-/******************************************************************************
-*
-*  RESET
-*
-*  Following rules are intended to fix layout quirks in different browsers.
-* 
-******************************************************************************/
-
 *,
 *:after,
 *:before {
@@ -38,10 +30,6 @@ body {
 	scroll-behavior: smooth;
 	/* Prevent adjustments of font size after orientation changes in iOS. [1] */
 	-webkit-text-size-adjust: 100%;
-	/* optimizeLegibility may cause some performance issues in some browsers
-	   (https://marco.org/2012/11/15/text-rendering-optimize-legibility) -- not sure if
-	   this is still current. Probably safe to assume that an appropriately legible
-	   font will be used anyway. [4] */
 	text-rendering: optimizeSpeed;
 }
 
@@ -59,10 +47,6 @@ li,
 blockquote,
 figure,
 figcaption,
-button,
-input,
-optgroup,
-select,
 textarea {
 	/* Remove the default margin for these elements in all browsers. [1],[4] */
 	margin: 0;
@@ -205,168 +189,6 @@ body img {
 }
 
 
-td:not([align]),
-th:not([align]) {
-	/* Borrow a rule from [5], modifying a rule from [2] to give table cells
-	   a default left alignment unless alignment is specified in the element. */
-	text-align: left;
-}
-
-
-button,
-input,
-optgroup,
-select,
-textarea {
-	/* Set the font styles to match the rest of the document in
-	   all browsers. [1],[4] */
-	font: inherit;
-	line-height: 1.15;
-	/* Remove the margin in Firefox and Safari. [1] */
-	margin: 0;
-}
-
-
-button,
-input {
-	/* Show the overflow in Edge. [1] */
-	overflow: visible;
-}
-
-
-button,
-select {
-	/* Remove the inheritance of text transform in Edge, Firefox, and IE. [1] */
-	text-transform: none;
-}
-
-
-.button,
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-	/* Fix the inability to style clickable types in iOS and Safari. [1] */
-	-webkit-appearance: button;
-	/* Set the correct cursor for these elements. [2] */
-	cursor: pointer;
-}
-
-
-.button[disabled],
-button[disabled],
-[type="button"][disabled],
-[type="reset"][disabled],
-[type="submit"][disabled] {
-	/* Reset the cursor for disabled button elements. [2] */
-	cursor: default;
-}
-
-
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-	/* Remove the inner border and padding in Firefox. [1] */
-	border-style: none;
-	padding: 0;
-}
-button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
-	/* Restore the focus styles unset by the previous rule. [1] */
-	outline: 1px dotted ButtonText;
-}
-
-
-fieldset {
-	/* Fix 'fieldset' padding in Firefox. [1] */
-	padding: 0.35em 0.75em 0.625em;
-}
-
-
-legend {
-	/* Fix text wrapping in Edge and IE. [1] */
-	box-sizing: border-box;
-	display: table;
-	max-width: 100%;
-	white-space: normal;
-	/* Fix color inheritance from 'fieldset' elements in IE. [1] */
-	color: inherit;
-	/* Remove padding so developer are not surprised when they zero out
-	   'fieldset' elements in all browsers. [1] */
-	padding: 0;
-}
-
-
-textarea {
-	/* Remove the default vertical scrollbar in IE 10+. [1] */
-	overflow: auto;
-}
-
-
-[type="checkbox"],
-[type="radio"] {
-	/* Add the correct box sizing in IE 10. [1] */
-	box-sizing: border-box;
-	/* Remove the padding present in IE 10. [1] */
-	padding: 0;
-}
-
-
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
-	/* Fix the cursor style of increment and decrement buttons in Chrome. [1] */
-	height: auto;
-}
-
-
-[type="search"] {
-	/* Fix appearance in Chrome and Safari. [1] */
-	-webkit-appearance: textfield;
-	/* Fix the outline style in Safari. [1] */
-	outline-offset: -2px;
-}
-
-
-[type="search"]::-webkit-search-decoration {
-	/* Remove the inner padding in Chrome and Safari on MacOS. [1] */
-	-webkit-appearance: none;
-}
-
-
-::-webkit-file-upload-button {
-	/* Fix the inability to sytle clickable types in iOS and Safari. [1] */
-	-webkit-appearance: button;
-	/* Fix the font properties in Safari. [1] */
-	font: inherit;
-}
-
-
-progress {
-	/* Add the correct vertical alignment in Chrome, Firefox, and Opera. [1] */
-	vertical-align: baseline;
-}
-
-
-[hidden] {
-	/* Add the correct display in IE 10. [1] */
-	display: none;
-}
-
-
-
-/******************************************************************************
-*
-*  LAYOUT SCALING
-*
-*  All rem rules are based on a 10px font size at desktop resolutions in a
-*  1920 x 1080 window. This base font size is scaled down for smaller
-*  resolutions and up for higher resolutions.
-*
-******************************************************************************/
-
 html {
 	/* Font size is set to 62.5% by default so that all future rem sizes are
 	   based on a 10px font. [6] */
@@ -461,14 +283,6 @@ only screen and (-webkit-min-device-pixel-ratio: 1.1) and (min-width: 2750px) {
 }
 
 
-/******************************************************************************
-*
-*   LAYOUT
-*
-*   Rules that impact the positioning of major layout elements.
-* 
-******************************************************************************/
-
 body {
 	/* Ensure that the page body fills the display even if the content does not. [4] */
 	min-height: 100vh;
@@ -493,23 +307,6 @@ main {
 }
 
 
-
-/******************************************************************************
-*
-*   UTILITY CLASSES
-*
-*   Some helpful utility classes.
-* 
-******************************************************************************/
-
-.table-container {
-	display: block;
-	width: 100%;
-	max-width: 100%;
-	overflow-x: auto;
-}
-
-
 .clearfix:after {
 	clear: both;
 	content: ' ';
@@ -525,17 +322,6 @@ main {
 .float-right {
 	float: right;
 }
-
-
-
-/******************************************************************************
-*
-*   BASE THEME
-*
-*   The rest of these rules set a default look-and-feel based on milligram.css [2].
-*   Override these as needed in your own css to set a custom look-and-feel.
-* 
-******************************************************************************/
 
 /**
  * Typography: font, letter-spacing, line-height, text-*, list-style-type.
@@ -625,35 +411,6 @@ ul dl,
 ul ol,
 ul ul {
 	font-size: 90%;
-}
-
-
-.button,
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-	font-family: Verdana;
-	font-size: 1.1rem;
-	font-weight: 700;
-	letter-spacing: 0.1rem;
-	line-height: 3.8rem;
-	text-align: center;
-	text-decoration: none;
-	text-transform: uppercase;
-}
-
-
-label,
-legend {
-	font-size: 1.6rem;
-	font-weight: 700;
-}
-
-
-label.inline,
-legend.inline {
-	font-weight: normal;
 }
 
 
@@ -766,101 +523,6 @@ li {
 	margin-bottom: 1.0rem;
 }
 
-
-table {
-	border-spacing: 0;
-}
-
-
-td,
-th {
-	padding: 1.2rem 1.5rem;
-}
-
-
-td:first-child,
-th:first-child {
-	padding-left: 0;
-}
-
-
-td:last-child,
-th:last-child {
-	padding-right: 0;
-}
-
-
-input,
-select,
-fieldset,
-textarea {
-	margin-bottom: 1.5rem;
-}
-
-
-textarea {
-	min-height: 6.5rem;
-}
-
-
-.button,
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-	display: inline-block;
-	height: 3.8rem;
-	padding: 0 3.0rem;
-	margin-bottom: 1.0rem;
-}
-
-
-[type='email'],
-[type='number'],
-[type='password'],
-[type='search'],
-[type='tel'],
-[type='text'],
-[type='url'],
-textarea,
-select {
-	height: 3.8rem;
-	padding: 0.6rem 1.0rem;
-	width: 100%;
-}
-
-
-[type='checkbox'],
-[type='radio'] {
-	display: inline;
-}
-
-
-select {
-	padding-right: 3.0rem;
-}
-
-
-label,
-legend {
-	display: block;
-	margin-bottom: 0.5rem;
-}
-
-
-label.inline,
-legend.inline {
-	display: inline-block;
-	margin-left: 0.5rem;
-}
-
-
-fieldset {
-	border-width: 0;
-	padding: 0;
-}
-
-
 /**
  * borders, outline, box-shadow, appearance, and opacity.
  */
@@ -889,192 +551,3 @@ code {
 pre > code {
 	border-radius: 0;
 }
-
-
-hr {
-	border: 0;
-	border-top: 0.1rem solid #f4f5f6;
-}
-
-
-td,
-th {
-	border-bottom: 0.1rem solid #e1e1e1;
-}
-
-
-/**
- * Button styling. All buttons start with the "outline" style defined in
- * milligram.css [2]. Buttons with a "submit" type or a "default" attribute
- * or class get the default style defined in milligram.
- */
-
-.button,
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-	border: 0.1rem solid #5680cc;
-	border-radius: .4rem;
-	white-space: nowrap;
-	background-color: transparent;
-	color: #5680cc;
-	vertical-align: text-bottom;
-	-webkit-appearance: none;
-}
-
-
-.button:focus,
-.button:hover,
-button:focus,
-button:hover,
-[type="button"]:focus,
-[type="button"]:hover,
-[type="reset"]:focus,
-[type="reset"]:hover,
-[type="submit"]:focus,
-[type="submit"]:hover {
-	outline: 0;
-	background-color: transparent;
-	border-color: #595959;
-	color: #595959;
-}
-
-
-/**
- * Disabled buttons.
- */
-
-.button[disabled],
-button[disabled],
-[type="button"][disabled],
-[type="reset"][disabled],
-[type="submit"][disabled] {
-	opacity: .5;
-}
-
-
-.button[disabled]:focus,
-.button[disabled]:hover,
-button[disabled]:focus,
-button[disabled]:hover,
-[type="button"][disabled]:focus,
-[type="button"][disabled]:hover,
-[type="reset"][disabled]:focus,
-[type="reset"][disabled]:hover,
-[type="submit"][disabled]:focus,
-[type="submit"][disabled]:hover {
-	border-color: inherit;
-	color: #5680cc;
-}
-
-
-/**
- * Submit buttons and buttons with a "default" class or attribute.
- */
-
-.button.default,
-button.default,
-[type="button"][default],
-[type="button"].default,
-[type="reset"].default,
-[type="submit"] {
-	background-color: #5680cc;
-	color: #fff;
-}
-
-
-.button.default:focus,
-.button.default:hover,
-button.default:focus,
-button.default:hover,
-[type="button"][default]:focus,
-[type="button"][default]:hover,
-[type="button"].default:focus,
-[type="button"].default:hover,
-[type="reset"].default:focus,
-[type="reset"].default:hover,
-[type="submit"]:focus,
-[type="submit"]:hover {
-	background-color: #595959;
-	border-color: #595959;
-	color: #fff;
-}
-
-
-.button.default[disabled]:focus,
-.button.default[disabled]:hover,
-button.default[disabled]:focus,
-button.default[disabled]:hover,
-[type="button"][default][disabled]:focus,
-[type="button"][default][disabled]:hover,
-[type="button"].default[disabled]:focus,
-[type="button"].default[disabled]:hover,
-[type="reset"].default[disabled]:focus,
-[type="reset"].default[disabled]:hover,
-[type="submit"].default[disabled]:focus,
-[type="submit"].default[disabled]:hover {
-	background-color: #5680cc;
-	border-color: #5680cc;
-}
-
-
-/**
- * Other form elements.
- */
-
-[type='email'],
-[type='number'],
-[type='password'],
-[type='search'],
-[type='tel'],
-[type='text'],
-[type='url'],
-textarea,
-select {
-	-webkit-appearance: none;
-	   -moz-appearance: none;
-			appearance: none;
-	background-color: transparent;
-	border: 0.1rem solid #d1d1d1;
-	border-radius: .4rem;
-	box-shadow: none;
-}
-
-
-[type='email']:focus,
-[type='number']:focus,
-[type='password']:focus,
-[type='search']:focus,
-[type='tel']:focus,
-[type='text']:focus,
-[type='url']:focus,
-textarea:focus,
-select:focus {
-	border-color: #5680cc;
-	outline: 0;
-}
-
-
-select {
-	background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDI5IDE0IiB3aWR0aD0iMjkiPjxwYXRoIGZpbGw9IiNkMWQxZDEiIGQ9Ik05LjM3NzI3IDMuNjI1bDUuMDgxNTQgNi45MzUyM0wxOS41NDAzNiAzLjYyNSIvPjwvc3ZnPgo=') center right no-repeat;
-}
-
-
-select:focus {
-	background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAyOSAxNCIgd2lkdGg9IjI5Ij48cGF0aCBmaWxsPSIjOWI0ZGNhIiBkPSJNOS4zNzcyNyAzLjYyNWw1LjA4MTU0IDYuOTM1MjNMMTkuNTQwMzYgMy42MjUiLz48L3N2Zz4K');
-}
-
-
-/******************************************************************************
-*
-*   CREDITS
-* 
-*   [1] normalize.css, https://github.com/necolas/normalize.css/
-*   [2] milligram.css, https://github.com/milligram/milligram/
-*   [3] https://css-tricks.com/box-sizing/
-*   [4] https://hankchizljaw.com/wrote/a-modern-css-reset/
-*   [5] https://github.com/jgthms/minireset.css/
-*   [6] skeleton.css, https://github.com/dhg/Skeleton
-* 
-******************************************************************************/
